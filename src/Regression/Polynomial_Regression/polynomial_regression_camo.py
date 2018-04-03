@@ -66,8 +66,9 @@ plt.show()
 
 # Visualization the Polynomial Regression results
 
-X_grid = np.arange(min(X), max(X), 0.1)
-X_grid = X_grid.reshape((len(X_grid), 1))
+X_grid = np.arange(min(X), max(X), 0.1) # This give as a vector
+X_grid = X_grid.reshape((len(X_grid), 1)) # This convert the previous vector to a matrix.
+# This is done since in the plt.plot, X_grid should be a matrix
 plt.scatter(X, y, color='red')
 #plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X)), color='blue')
 plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color='blue')
