@@ -7,12 +7,11 @@ Created on Sun Apr 15 13:58:31 2018
 """
 # K-Nearest Neighbors (K-NN)
 
-%matplotlib qt
-
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn
 
 # Importing the dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
@@ -76,3 +75,7 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
+
+# Visualizing the Confusion Matrix
+df_cm = pd.DataFrame(cm, index= ['R E D', 'G R E E N'])
+seaborn.heatmap(df_cm, annot=True).set_title("Confusion Matrix (K-NN Classifier)")
