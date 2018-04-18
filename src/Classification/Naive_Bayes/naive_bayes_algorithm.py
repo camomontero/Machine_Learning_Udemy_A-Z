@@ -10,6 +10,7 @@ Created on Tue Apr 17 18:59:12 2018
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn
 
 # Importing the dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
@@ -73,3 +74,7 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
+
+# Visualizing the Confusion Matrix
+df_cm = pd.DataFrame(cm, index= ['R E D', 'G R E E N'])
+seaborn.heatmap(df_cm, annot=True).set_title("Confusion Matrix (Naive Bayes Classifier)")
