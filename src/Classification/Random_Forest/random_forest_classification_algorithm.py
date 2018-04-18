@@ -75,3 +75,7 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
+
+# Visualizing the Confusion Matrix
+df_cm = pd.DataFrame(cm, index= ['R E D', 'G R E E N'])
+seaborn.heatmap(df_cm, annot=True).set_title("Confusion Matrix (Random Forest Classifier)")
