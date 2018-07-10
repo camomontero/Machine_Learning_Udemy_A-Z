@@ -12,6 +12,7 @@ Created on Wed Apr 18 09:11:04 2018
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn
 
 # Importing the dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
@@ -29,9 +30,9 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 # Fitting Random Forest Classification to the Training set
-from sklearn.tree import RandomForestClassifier
-clasifier = RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=0)
-classi
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=0)
+classifier.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
